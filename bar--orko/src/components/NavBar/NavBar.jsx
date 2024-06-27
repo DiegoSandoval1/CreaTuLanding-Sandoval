@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CartWidget from '../CardWidget/CardWidget';
 import 'bootstrap/dist/css/bootstrap.rtl.min.css';  
 import logo from '../../assets/img/logo_orko.png';
@@ -25,6 +26,12 @@ const NavBar = () => {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Zervizioz</a>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/tipo_de_bebidas/alcoholica">Bebidaz Alkokólikaz</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/tipo_de_bebidas/no alcoholica">Bebidaz Zin Alkohol</Link>
                         </li>
                     </ul>
                 </div>
