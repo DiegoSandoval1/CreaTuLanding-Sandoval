@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const ItemList = ({ productos, agregarAlCarrito }) => {
     return (
@@ -12,6 +13,7 @@ const ItemList = ({ productos, agregarAlCarrito }) => {
                                 <h5 className="card-title">{prod.trago}</h5>
                                 <p className="card-text">Precio: ${prod.Precio}</p>
                                 <button className="btn btn-primary" onClick={() => agregarAlCarrito(prod.trago, prod.Precio)}>Agregar al carrito</button>
+                                <Link to={`/item/${prod.id}`} className="btn btn-secondary mt-2">Ver detalles</Link>
                             </div>
                         </div>
                     </div>
