@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from '../../context/CartContext';
 
 const CartWidget = () => {
-    return (
-        <div>
-            <span role="img" aria-label="cart">🛒</span>
-            <span>0</span>
-        </div>
-    );
-}
+  const { cart } = useContext(Context);
+
+  // Calcula el número total de productos en el carrito
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+
+  return (
+    <div>
+      <span role="img" aria-label="cart">🛒</span>
+      {totalItems > 0 ? (
+        <span className="badge bg-danger ms-2">{totalItems}</span>
+      ) : (
+        <span className="ms-2">0</span>
+      )}
+    </div>
+  );
+};
 
 export default CartWidget;
