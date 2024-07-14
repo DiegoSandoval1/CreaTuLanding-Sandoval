@@ -4,7 +4,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { conseguirProductos } from '../../data/asyncMock';
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState(null);s
+    const [producto, setProducto] = useState(null);
     const { id } = useParams();
 
     useEffect(() => {

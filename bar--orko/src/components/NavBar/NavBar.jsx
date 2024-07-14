@@ -8,10 +8,10 @@ const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand d-flex align-items-center" href="#">
-                <img src={logo} alt="Logo" style={{ width: '50px', marginRight: '10px' }} />
+                <Link className="navbar-brand d-flex align-items-center" to="/">
+                    <img src={logo} alt="Logo" style={{ width: '50px', marginRight: '10px' }} />
                     El Bar Orko de Gutrekka
-                </a>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -19,13 +19,13 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Tragoz</a>
+                            <Link className="nav-link" to="/tragoz">Tragoz</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Zervizioz</a>
+                            <Link className="nav-link" to="/zervizioz">Zervizioz</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/tipo_de_bebidas/alcoholica">Bebidaz Alkokólikaz</Link>
@@ -34,8 +34,10 @@ const NavBar = () => {
                             <Link className="nav-link" to="/tipo_de_bebidas/no alcoholica">Bebidaz Zin Alkohol</Link>
                         </li>
                     </ul>
+                    <Link className="nav-link text-light" to="/cart">
+                        <CartWidget />
+                    </Link>
                 </div>
-                <CartWidget />
             </div>
         </nav>
     );

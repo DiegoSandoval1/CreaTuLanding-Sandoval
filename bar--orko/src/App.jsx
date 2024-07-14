@@ -3,22 +3,25 @@ import React from 'react';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from '../../bar--orko/src/components/Cart/Cart';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { CartContextProvider } from './context/CartContext';
 
 const App = () => {
     return (
-        <div>
-            <BrowserRouter>
-                <NavBar />
-                <Routes>
-                    <Route path="/" element={<ItemListContainer mensaje="Bienvenido a El Bar Orko de Gutrekka" />} />
-                    <Route path="/tipo_de_bebidas/:tipo_de_bebidas" element={<ItemListContainer mensaje="Nueztroz Tragoz" />} />
-                    <Route path="/item/:id" element={<ItemDetailContainer />} />
-                </Routes>
-            </BrowserRouter>
-        </div>
+      <CartContextProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<ItemListContainer mensaje="Bienvenido a El Bar Orko de Gutrekka" />} />
+            <Route path="/tipo_de_bebidas/:tipo_de_bebidas" element={<ItemListContainer mensaje="Nueztroz Tragoz" />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </BrowserRouter>
+      </CartContextProvider>
     );
-};
-
-export default App;
+  };
+  
+  export default App;
