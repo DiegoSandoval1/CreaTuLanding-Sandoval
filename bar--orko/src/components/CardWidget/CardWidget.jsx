@@ -4,7 +4,6 @@ import Context from '../../context/CartContext';
 const CartWidget = () => {
   const { cart } = useContext(Context);
 
-  // Calcula el número total de productos en el carrito
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
