@@ -1,4 +1,3 @@
-
 import { db } from '../services/config/firebase'; 
 import { collection, getDocs, query, where } from 'firebase/firestore';
 

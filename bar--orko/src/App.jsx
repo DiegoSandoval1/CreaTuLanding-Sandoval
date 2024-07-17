@@ -7,6 +7,7 @@ import Cart from '../../bar--orko/src/components/Cart/Cart';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CartContextProvider } from './context/CartContext';
+import Checkout from './components/Checkout/Checkout';
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/tipo_de_bebidas/:tipo_de_bebidas" element={<ItemListContainer mensaje="Nueztroz Tragoz" />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </BrowserRouter>
       </CartContextProvider>

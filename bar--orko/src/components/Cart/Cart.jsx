@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Context from '../../context/CartContext';
 
 const Cart = () => {
   const { cart, removeItem, updateItemQuantity, clearCart } = useContext(Context);
+  const navigate = useNavigate();
 
   const handleQuantityChange = (id, event) => {
     const quantity = parseInt(event.target.value);
@@ -10,8 +12,7 @@ const Cart = () => {
   };
 
   const handleBuy = () => {
-    alert('Compra realizada con éxito!');
-    clearCart();
+    navigate('/checkout');
   };
 
   return (
