@@ -11,13 +11,13 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const fetchProducto = async () => {
             try {
-                const productoDoc = doc(db, 'productos', id);  // Usa el ID del documento de Firestore
+                const productoDoc = doc(db, 'productos', id);  
                 const productoSnapshot = await getDoc(productoDoc);
 
                 if (productoSnapshot.exists()) {
                     setProducto({ id: productoSnapshot.id, ...productoSnapshot.data() });
                 } else {
-                    console.log("No existe tal documento!");
+                    console.log("¡No exizte tal koza, humie!");
                 }
             } catch (error) {
                 console.log(error);
@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {producto ? <ItemDetail producto={producto} /> : <p>Cargando...</p>}
+            {producto ? <ItemDetail producto={producto} /> : <p>Kargando...</p>}
         </div>
     );
 };

@@ -2,38 +2,38 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ItemList from '../ItemList/itemList';
 import { useParams } from 'react-router-dom';
-import { conseguirProductos, alcoholNoAlcohol } from '../../utils/firebaseFunctions';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../services/config/firebase';
 
 const ItemListContainer = ({ mensaje }) => {
     const [productos, setProductos] = useState([]);
     const { tipo_de_bebidas } = useParams();
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchProductos = async () => {
             try {
-                let prod;
+                const productosCollection = collection(db, 'productos');
+                let q;
                 if (tipo_de_bebidas) {
-                    prod = await alcoholNoAlcohol(tipo_de_bebidas);
+                    q = query(productosCollection, where('tipo_de_bebida', '==', tipo_de_bebidas));
                 } else {
-                    prod = await conseguirProductos();
+                    q = query(productosCollection);
                 }
-                setProductos(prod);
+                const productosSnapshot = await getDocs(q);
+                const productosList = productosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setProductos(productosList);
             } catch (error) {
                 console.error('Error al obtener productos:', error);
             }
         };
 
-        fetchData();
+        fetchProductos();
     }, [tipo_de_bebidas]);
-
-    const agregarAlCarrito = (trago, precio) => {
-        console.log(`Agregado ${trago} por ${precio}`);
-    };
 
     return (
         <div>
             <h1>{mensaje}</h1>
-            <ItemList productos={productos} agregarAlCarrito={agregarAlCarrito} />
+            <ItemList productos={productos} />
         </div>
     );
 };

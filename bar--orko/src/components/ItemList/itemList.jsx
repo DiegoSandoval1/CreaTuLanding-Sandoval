@@ -6,7 +6,7 @@ const ItemList = ({ productos }) => {
   const { addItem } = useContext(Context);
 
   const handleAddToCart = (producto) => {
-    addItem(producto, 1); // Agrega el producto con cantidad 1 al carrito
+    addItem(producto, 1); 
   };
 
   return (
