@@ -46,7 +46,7 @@ Este es un E-commerse temático sobre un bar con temática de los Orkos de Warha
 ## Instalación
 
 1. Clona este repositorio:
-    $ bash git clone https://github.com/tu-usuario/ProyectoFinal_Sandoval.git
+    $ bash git clone https://github.com/DiegoSandoval1/ProyectoFinal_Sandoval
 
 2. Navega al directorio del proyecto:
     $ bash cd ProyectoFinal_Sandoval
