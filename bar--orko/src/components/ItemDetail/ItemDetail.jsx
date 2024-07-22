@@ -29,7 +29,7 @@ const ItemDetail = ({ producto }) => {
                         />
                         <div className="card-body">
                             <h5 className="card-title">{producto.trago}</h5>
-                            <p className="card-text">Precio: ${producto.Precio}</p>
+                            <p className="card-text">Prezio: ${producto.Precio}</p>
                             <p className="card-text">Favorito de: {producto.Favorito_de}</p>
                             <button onClick={() => onAdd(1)} className="btn btn-primary">Agregar al karrito</button>
                         </div>
