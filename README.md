@@ -80,7 +80,7 @@ Este es un E-commerse temático sobre un bar con temática de los Orkos de Warha
 1. Inicia el servidor de desarrollo:
     $ bash npm start
 
-2. Abre tu navegador en `http://localhost:3000` para ver la aplicación en funcionamiento.
+2. Abre tu navegador en `http://localhost:5173` para ver la aplicación en funcionamiento.
 
 3. ¡LISTO, HUMIE!
 
