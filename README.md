@@ -54,7 +54,7 @@ Este es un E-commerse temático sobre un bar con temática de los Orkos de Warha
 3. Instala las dependencias:
     $ bash npm install
 
-4. Configura Firebase:
+4. Configura Firebase (en caso de no funcionar):
     - Crea un proyecto en Firebase.
     - Configura Firestore.
     - Agrega tu configuración de Firebase en `src/services/config/firebase.js`:
@@ -80,7 +80,7 @@ Este es un E-commerse temático sobre un bar con temática de los Orkos de Warha
 1. Inicia el servidor de desarrollo:
     $ bash npm start
 
-2. Abre tu navegador en `http://localhost:3000` para ver la aplicación en funcionamiento.
+2. Abre tu navegador en `http://localhost:5173` para ver la aplicación en funcionamiento.
 
 3. ¡LISTO, HUMIE!
 
