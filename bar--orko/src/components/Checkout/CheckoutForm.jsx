@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { db } from "../../services/config/firebase";
 import { collection, addDoc } from 'firebase/firestore';
+import Context from '../../context/CartContext';
 
 const CheckoutForm = () => {
     const [firstName, setFirstName] = useState('');
@@ -8,6 +9,7 @@ const CheckoutForm = () => {
     const [address, setAddress] = useState('');
     const [paymentType, setPaymentType] = useState('creditCard');
     const [orderId, setOrderId] = useState(null);
+    const { clearCart } = useContext(Context);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,6 +24,7 @@ const CheckoutForm = () => {
             });
             setOrderId(docRef.id);
             console.log("Order ID: ", docRef.id);
+            clearCart(); 
         } catch (e) {
             console.error("Error adding document: ", e);
         }
@@ -53,7 +56,7 @@ const CheckoutForm = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="address">Direzzión</label>
+                    <label htmlFor="address">Dirección</label>
                     <input
                         type="text"
                         className="form-control"
@@ -71,7 +74,7 @@ const CheckoutForm = () => {
                         value={paymentType}
                         onChange={(e) => setPaymentType(e.target.value)}
                     >
-                        <option value="creditCard">Tarjeta de Krédito</option>
+                        <option value="creditCard">Tarjeta de Crédito</option>
                         <option value="debitCard">Tarjeta de Débito</option>
                         <option value="cash">Efectivo</option>
                     </select>
