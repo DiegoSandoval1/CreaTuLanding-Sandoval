@@ -22,12 +22,6 @@ const NavBar = () => {
                             <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/tragoz">Tragoz</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/zervizioz">Zervizioz</Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link" to="/tipo_de_bebidas/alcoholica">Bebidaz Alkokólikaz</Link>
                         </li>
                         <li className="nav-item">

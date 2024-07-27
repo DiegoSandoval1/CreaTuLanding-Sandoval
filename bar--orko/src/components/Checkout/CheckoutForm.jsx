@@ -74,14 +74,14 @@ const CheckoutForm = () => {
                         value={paymentType}
                         onChange={(e) => setPaymentType(e.target.value)}
                     >
-                        <option value="creditCard">Tarjeta de Crédito</option>
+                        <option value="creditCard">Tarjeta de Krédito</option>
                         <option value="debitCard">Tarjeta de Débito</option>
-                        <option value="cash">Efectivo</option>
+                        <option value="cash">Efektivo</option>
                     </select>
                 </div>
                 <button type="submit" className="btn btn-primary">Enviar</button>
             </form>
-            {orderId && <p>Order ID: {orderId}</p>}
+            {orderId && <p>¡Graziaz por Komprar, Humie! ID de la orden: {orderId}</p>}
         </div>
     );
 };

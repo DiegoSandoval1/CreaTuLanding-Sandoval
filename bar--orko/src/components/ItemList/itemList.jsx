@@ -28,10 +28,10 @@ const ItemList = ({ productos }) => {
                   className="btn btn-primary"
                   onClick={() => handleAddToCart(prod)}
                 >
-                  Agregar al carrito
+                  Agregar al karrito
                 </button>
                 <Link to={`/item/${prod.id}`} className="btn btn-secondary mt-2">
-                  Ver detalles
+                  Ver detallez
                 </Link>
               </div>
             </div>

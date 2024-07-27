@@ -1,17 +1,25 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context as CartContext } from '../../context/CartContext'; 
 import 'bootstrap/dist/css/bootstrap.rtl.min.css';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ producto }) => {
-    const { addItem, isItemInCart } = useContext(CartContext); 
+    const { addItem, isItemInCart, getItemQuantity } = useContext(CartContext); 
     const [showCount, setShowCount] = useState(!isItemInCart(producto.id));
+    const [initialCount, setInitialCount] = useState(1);
+
+    useEffect(() => {
+        if (isItemInCart(producto.id)) {
+            setInitialCount(getItemQuantity(producto.id));
+        }
+    }, [isItemInCart, producto.id, getItemQuantity]);
 
     const handleAdd = (quantity) => {
+        console.log(`Adding ${quantity} of ${producto.trago} to cart`);
         const item = {
             id: producto.id,
             trago: producto.trago,
-            Precio: producto.Precio
+            Precio: producto.Precio,
         };
         addItem(item, quantity);
         setShowCount(false); 
@@ -35,11 +43,11 @@ const ItemDetail = ({ producto }) => {
                             {showCount ? (
                                 <ItemCount
                                     stock={producto.stock}
-                                    initial={1}
+                                    initial={initialCount}
                                     onAdd={handleAdd}
                                 />
                             ) : (
-                                <p>Produkto agregado al carrito, ¡humie!</p>
+                                <p>Producto agregado al karrito, ¡humie!</p>
                             )}
                         </div>
                     </div>
