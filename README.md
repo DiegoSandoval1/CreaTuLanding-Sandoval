@@ -46,13 +46,13 @@ Este es un E-commerse temático sobre un bar con temática de los Orkos de Warha
 ## Instalación
 
 1. Clona este repositorio:
-    $ bash git clone https://github.com/DiegoSandoval1/ProyectoFinal_Sandoval
+    - git clone https://github.com/DiegoSandoval1/ProyectoFinal_Sandoval
 
 2. Navega al directorio del proyecto:
-    $ bash cd ProyectoFinal_Sandoval
+    - cd ProyectoFinal_Sandoval
 
 3. Instala las dependencias:
-    $ bash npm install
+    - npm install
 
 4. Configura Firebase (en caso de no funcionar):
     - Crea un proyecto en Firebase.
@@ -78,7 +78,7 @@ Este es un E-commerse temático sobre un bar con temática de los Orkos de Warha
 ## Uso
 
 1. Inicia el servidor de desarrollo:
-    $ bash npm run dev
+    - npm run dev
 
 2. Abre tu navegador en `http://localhost:5173` para ver la aplicación en funcionamiento.
 
