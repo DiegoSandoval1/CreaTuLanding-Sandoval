@@ -78,7 +78,7 @@ Este es un E-commerse temático sobre un bar con temática de los Orkos de Warha
 ## Uso
 
 1. Inicia el servidor de desarrollo:
-    $ bash npm start
+    $ bash npm run dev
 
 2. Abre tu navegador en `http://localhost:5173` para ver la aplicación en funcionamiento.
 
