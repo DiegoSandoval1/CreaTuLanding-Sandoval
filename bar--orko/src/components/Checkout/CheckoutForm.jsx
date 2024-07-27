@@ -23,7 +23,6 @@ const CheckoutForm = () => {
                 timestamp: new Date()
             });
             setOrderId(docRef.id);
-            console.log("Order ID: ", docRef.id);
             clearCart(); 
         } catch (e) {
             console.error("Error adding document: ", e);
