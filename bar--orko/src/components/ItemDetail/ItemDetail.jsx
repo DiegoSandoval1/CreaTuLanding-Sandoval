@@ -47,7 +47,7 @@ const ItemDetail = ({ producto }) => {
                                     producto={producto} 
                                 />
                             ) : (
-                                <p>Producto agregado al karrito, ¡humie!</p>
+                                <p>Produkto agregado al karrito, ¡humie!</p>
                             )}
                         </div>
                     </div>

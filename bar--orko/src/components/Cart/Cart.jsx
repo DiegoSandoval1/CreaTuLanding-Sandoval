@@ -3,17 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import Context from '../../context/CartContext';
 
 const Cart = () => {
-  const { cart, removeItem, updateItemQuantity, clearCart } = useContext(Context);
+  const { cart, removeItem, clearCart } = useContext(Context);
   const navigate = useNavigate();
-
-  const handleQuantityChange = (id, event) => {
-    const quantity = parseInt(event.target.value);
-    updateItemQuantity(id, quantity);
-  };
 
   const handleBuy = () => {
     navigate('/checkout');
   };
+
+  // Calcular el total de la compra
+  const total = cart.reduce((acc, item) => acc + item.Precio * item.quantity, 0);
 
   return (
     <div className="container">
@@ -44,16 +42,7 @@ const Cart = () => {
                     />
                   </td>
                   <td>${item.Precio}</td>
-                  <td>
-                    <input
-                      type="number"
-                      min="1"
-                      value={item.quantity}
-                      onChange={(e) => handleQuantityChange(item.id, e)}
-                      className="form-control"
-                      style={{ width: '60px' }}
-                    />
-                  </td>
+                  <td>{item.quantity}</td>
                   <td>
                     <button
                       onClick={() => removeItem(item.id)}
@@ -67,6 +56,7 @@ const Cart = () => {
             </tbody>
           </table>
           <div className="mt-4">
+            <h4>Total de la kompra: ${total.toFixed(2)}</h4>
             <button onClick={clearCart} className="btn btn-warning me-2">Vaziar Karrito</button>
             <button onClick={handleBuy} className="btn btn-success">Komprar</button>
           </div>
