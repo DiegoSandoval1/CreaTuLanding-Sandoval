@@ -15,7 +15,6 @@ const ItemDetail = ({ producto }) => {
     }, [isItemInCart, producto.id, getItemQuantity]);
 
     const handleAdd = (quantity) => {
-        console.log(`Adding ${quantity} of ${producto.trago} to cart`);
         const item = {
             id: producto.id,
             trago: producto.trago,
@@ -45,6 +44,7 @@ const ItemDetail = ({ producto }) => {
                                     stock={producto.stock}
                                     initial={initialCount}
                                     onAdd={handleAdd}
+                                    producto={producto} 
                                 />
                             ) : (
                                 <p>Producto agregado al karrito, ¡humie!</p>
